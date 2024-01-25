@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8982742890812579241}
   - component: {fileID: 8982742890812579240}
+  - component: {fileID: 7758941487124484541}
   m_Layer: 5
   m_Name: LeagueStanding
   m_TagString: Untagged
@@ -66,6 +67,21 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &7758941487124484541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8982742890812579242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27e714845d8e233448ebc328722565ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Standing: {fileID: 8982742890965554134}
+  TeamName: {fileID: 8982742892727984890}
+  Points: {fileID: 8982742891998400968}
 --- !u!1 &8982742890965554136
 GameObject:
   m_ObjectHideFlags: 0
