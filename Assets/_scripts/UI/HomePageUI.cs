@@ -30,10 +30,14 @@ public class HomePageUI : UIPage
     protected override void OnShow()
     {
         ClearFixtures();
+        ClearLeagueStandings();
 
+        //Get the matchweek from the game manager to render the current results
+        var matchWeek = GameManager.instance.MatchWeek;
+        var prevWeek = matchWeek == 0 ? 0 : matchWeek - 1;
 
         //Set up Results panel
-        foreach (Fixture f in FixturesManager.Instance.MatchWeeks[0].fixtures)
+        foreach (Fixture f in FixturesManager.Instance.GetMatchWeeks()[prevWeek].fixtures)
         {
             var obj = Instantiate(_resultPrefab, _fixtureContainer);
             obj.GetComponent<FixtureUI>().SetFixtureText(f);
@@ -54,6 +58,14 @@ public class HomePageUI : UIPage
     private void ClearFixtures()
     {
         foreach(Transform t in _fixtureContainer)
+        {
+            Destroy(t.gameObject);
+        }
+    }
+
+    private void ClearLeagueStandings()
+    {
+        foreach(Transform t in _leagueStandingContainer)
         {
             Destroy(t.gameObject);
         }

@@ -23,7 +23,7 @@ public class FixtureListUI : UIPage
 
     public void ChangeWeekFocus(int amount)
     {
-        weekFocus = weekFocus + amount < 0 ? 0 : weekFocus + amount > FixturesManager.Instance.MatchWeeks.Count - 1 ? weekFocus : weekFocus + amount;
+        weekFocus = weekFocus + amount < 0 ? 0 : weekFocus + amount > FixturesManager.Instance.GetMatchWeeks().Count - 1 ? weekFocus : weekFocus + amount;
 
         SetupFixturesPanel();
     }
@@ -38,7 +38,7 @@ public class FixtureListUI : UIPage
         ClearFixtures();
 
         //Set up Results panel
-        foreach (Fixture f in FixturesManager.Instance.MatchWeeks[weekFocus].fixtures)
+        foreach (Fixture f in FixturesManager.Instance.GetMatchWeeks()[weekFocus].fixtures)
         {
             var obj = Instantiate(_resultPrefab, _fixtureContainer);
             obj.GetComponent<FixtureUI>().SetFixtureText(f);

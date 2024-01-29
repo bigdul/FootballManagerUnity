@@ -1,3 +1,5 @@
+using System;
+
 [System.Serializable]
 public class Fixture
 {
@@ -17,5 +19,11 @@ public class Fixture
         awayScore = 0;
         MatchWeek = matchWeek;
 
+    }
+
+    internal void SimulateFixture()
+    {
+        homeScore = UnityEngine.Random.Range(0, 5);
+        awayScore = UnityEngine.Random.Range(0, 5);
     }
 }

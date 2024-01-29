@@ -211,7 +211,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 29365087}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1294990309}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: ShowHomePage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &29365087
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4349,7 +4361,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1178556682}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1294990314}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: SimulateWeek
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1178556682
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4806,6 +4830,7 @@ GameObject:
   - component: {fileID: 1294990311}
   - component: {fileID: 1294990312}
   - component: {fileID: 1294990313}
+  - component: {fileID: 1294990314}
   m_Layer: 0
   m_Name: Controller
   m_TagString: Untagged
@@ -4882,6 +4907,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d1cb03889cdb1c94290b8d65566df8ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1294990314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1294990308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6937fec454e44244a8168c3e7241b1e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1318795771

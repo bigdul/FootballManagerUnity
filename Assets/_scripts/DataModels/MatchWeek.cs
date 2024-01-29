@@ -17,4 +17,17 @@ public class MatchWeek
     {
         fixtures.Add(fixture);
     }
+
+    public void SimulateWeek()
+    {
+        foreach(Fixture fixture in fixtures)
+        {
+            fixture.SimulateFixture();
+
+            LeagueManager.Instance.UpdateStandings(fixture);
+        }
+
+
+        hasBeenPlayed = true;
+    }
 }
