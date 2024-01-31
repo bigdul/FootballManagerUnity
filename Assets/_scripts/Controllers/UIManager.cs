@@ -32,16 +32,22 @@ public class UIManager : MonoBehaviour
         ShowHomePage();
     }
 
-    public void ShowPlayerDetails(string playerID)
+    public void ShowPlayerDetails(int playerID)
     {
         HideAllUI();
-        playerDetailsUI.Show();
+
+        var player = PlayerManager.Instance.GetPlayer(playerID);
+
+        playerDetailsUI.Show(player);
     }
 
-    public void ShowClubDetails(string clubID)
+    public void ShowClubDetails(int clubID)
     {
         HideAllUI();
-        clubDetailsUI.Show();
+
+        var team = TeamManager.Instance.GetTeam(clubID);
+
+        clubDetailsUI.Show(team);
     }
 
     public void ShowFixtureList()

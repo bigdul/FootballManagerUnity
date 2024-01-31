@@ -13,3 +13,6 @@ MonoBehaviour:
   m_Name: Manchester
   m_EditorClassIdentifier: 
   teamName: Manchesta
+  YearFounded: 1991
+  StadiumCapacity: 19000
+  Players: []

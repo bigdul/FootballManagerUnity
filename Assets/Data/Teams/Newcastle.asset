@@ -13,3 +13,6 @@ MonoBehaviour:
   m_Name: Newcastle
   m_EditorClassIdentifier: 
   teamName: Newcastle
+  YearFounded: 1891
+  StadiumCapacity: 15000
+  Players: []

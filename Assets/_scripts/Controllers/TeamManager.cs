@@ -1,13 +1,14 @@
 using UnityEngine;
 using System.Collections.Generic;
 using UnityEditor.AssetImporters;
+using System.Linq;
 
 public class TeamManager : MonoBehaviour
 {
     public static TeamManager Instance;
 
     public List<Team> teamSOs; // Assign Team Scriptable Objects in Unity Inspector
-    private List<Team> instantiatedTeams = new List<Team>();
+    public List<Team> instantiatedTeams = new List<Team>();
 
     private void Awake()
     {
@@ -29,9 +30,17 @@ public class TeamManager : MonoBehaviour
             {
                 Team teamInstance = Instantiate(teamSO); // Create runtime instances
                 instantiatedTeams.Add(teamInstance);
+
+                teamInstance.GenerateTeam();
+                teamInstance.SetTeamId(instantiatedTeams.Count);
             }
         }
 
         return instantiatedTeams;
+    }
+
+    public Team GetTeam(int teamId)
+    {
+        return instantiatedTeams.FirstOrDefault(x=>x.TeamId == teamId);
     }
 }

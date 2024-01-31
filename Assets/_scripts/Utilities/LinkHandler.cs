@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.EventSystems;
+using System;
 
 public class LinkHandler : MonoBehaviour, IPointerClickHandler
 {
@@ -35,19 +36,22 @@ public class LinkHandler : MonoBehaviour, IPointerClickHandler
         string type = splitID[0];
         string id = splitID[1];
 
-        switch (type)
+        if (int.TryParse(id, out int result))
         {
-            case "player":
-                UIManager.Instance.ShowPlayerDetails(id);
-                Debug.Log($"Clicked player with id: {id}");
-                break;
-            case "club":
-                UIManager.Instance.ShowClubDetails(id);
-                Debug.Log($"Clicked club with id: {id}");
-                break;
-            default:
-                Debug.LogError("Unknown link type");
-                break;
+            switch (type)
+            {
+                case "player":
+                    UIManager.Instance.ShowPlayerDetails(result);
+                    Debug.Log($"Clicked player with id: {id}");
+                    break;
+                case "club":
+                    UIManager.Instance.ShowClubDetails(result);
+                    Debug.Log($"Clicked club with id: {id}");
+                    break;
+                default:
+                    Debug.LogError("Unknown link type");
+                    break;
+            }
         }
     }
 }

@@ -13,3 +13,6 @@ MonoBehaviour:
   m_Name: Miami
   m_EditorClassIdentifier: 
   teamName: Miami
+  YearFounded: 1990
+  StadiumCapacity: 10000
+  Players: []

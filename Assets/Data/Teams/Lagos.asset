@@ -13,3 +13,6 @@ MonoBehaviour:
   m_Name: Lagos
   m_EditorClassIdentifier: 
   teamName: Lagos
+  YearFounded: 1901
+  StadiumCapacity: 10200
+  Players: []

@@ -10,10 +10,7 @@ public class LeagueStandingUI : MonoBehaviour
     public void SetLeagueStandingText(LeagueTableEntry entry, int standing)
     {
         Standing.text = standing.ToString();
-        TeamName.text = entry.Team.teamName;
+        TeamName.text = LinkBuilder.BuildLink(entry.Team);
         Points.text = entry.Points.ToString();
-
-
-
     }
 }

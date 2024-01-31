@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using static UnityEngine.EventSystems.EventTrigger;
 
 public class FixtureUI : MonoBehaviour
 {
@@ -9,8 +10,8 @@ public class FixtureUI : MonoBehaviour
 
     public void SetFixtureText(Fixture fixture)
     {
-        HomeTeam.text = fixture.homeTeam.teamName;
-        AwayTeam.text = fixture.awayTeam.teamName;
+        HomeTeam.text = LinkBuilder.BuildLink(fixture.homeTeam);
+        AwayTeam.text = LinkBuilder.BuildLink(fixture.awayTeam);
 
         if (fixture.MatchWeek.hasBeenPlayed)
         {

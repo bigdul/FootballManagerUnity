@@ -13,3 +13,6 @@ MonoBehaviour:
   m_Name: Stockholm
   m_EditorClassIdentifier: 
   teamName: Stockholm
+  YearFounded: 1953
+  StadiumCapacity: 5200
+  Players: []

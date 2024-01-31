@@ -13,3 +13,6 @@ MonoBehaviour:
   m_Name: Cardiff
   m_EditorClassIdentifier: 
   teamName: Cardiff
+  YearFounded: 1912
+  StadiumCapacity: 20000
+  Players: []
