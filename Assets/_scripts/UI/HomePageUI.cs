@@ -34,10 +34,9 @@ public class HomePageUI : UIPage
 
         //Get the matchweek from the game manager to render the current results
         var matchWeek = GameManager.instance.MatchWeek;
-        var prevWeek = matchWeek == 0 ? 0 : matchWeek - 1;
 
         //Set up Results panel
-        foreach (Fixture f in FixturesManager.Instance.GetMatchWeeks()[prevWeek].fixtures)
+        foreach (Fixture f in FixturesManager.Instance.GetMatchWeeks()[matchWeek].fixtures)
         {
             var obj = Instantiate(_resultPrefab, _fixtureContainer);
             obj.GetComponent<FixtureUI>().SetFixtureText(f);

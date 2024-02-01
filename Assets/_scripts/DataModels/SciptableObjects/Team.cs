@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 [System.Serializable]
@@ -16,7 +17,13 @@ public class Team : ScriptableObject
 
     public void SetTeamId(int id) {  _teamId = id; }
     public int TeamId => _teamId;
-    
+
+    public float AvgAttacking => Mathf.Round((float)Players.Average(x => x.Attacking));
+    public float AvgDefending => Mathf.Round((float)Players.Average(x => x.Defending));
+    public float AvgTechnique => Mathf.Round((float)Players.Average(x => x.Technique));
+    public float AvgPhysical => Mathf.Round((float)Players.Average(x => x.Physical));
+
+
 
     public List<Player> Players = new List<Player>();
 

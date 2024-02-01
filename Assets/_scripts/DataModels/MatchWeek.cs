@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 
 [System.Serializable]
 public class MatchWeek
@@ -20,7 +21,7 @@ public class MatchWeek
 
     public void SimulateWeek()
     {
-        foreach(Fixture fixture in fixtures)
+        foreach (Fixture fixture in fixtures.Where(x => !x.hasPlayed))
         {
             fixture.SimulateFixture();
 
