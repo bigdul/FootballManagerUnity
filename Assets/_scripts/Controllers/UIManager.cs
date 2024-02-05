@@ -8,6 +8,7 @@ public class UIManager : MonoBehaviour
     private ClubDetailsUI clubDetailsUI;
     private FixtureListUI fixtureListUI;
     private HomePageUI homePageUI;
+    private MatchSimPageUI matchSimPageUI;
 
     private void Awake()
     {
@@ -27,6 +28,7 @@ public class UIManager : MonoBehaviour
         clubDetailsUI = ClubDetailsUI.Instance;
         fixtureListUI = FixtureListUI.Instance;
         homePageUI = HomePageUI.Instance;
+        matchSimPageUI = MatchSimPageUI.Instance;
 
         //Start by showing home page
         ShowHomePage();
@@ -62,6 +64,12 @@ public class UIManager : MonoBehaviour
         homePageUI.Show();
     }
 
+    public void ShowMatchSimPage(Fixture fixture)
+    {
+        HideAllUI();
+        matchSimPageUI.Show(fixture);
+    }
+
     private void HideAllUI()
     {
         // Hide all UI panels
@@ -69,5 +77,6 @@ public class UIManager : MonoBehaviour
         clubDetailsUI.Hide();
         fixtureListUI.Hide();
         homePageUI.Hide();
+        matchSimPageUI.Hide();
     }
 }

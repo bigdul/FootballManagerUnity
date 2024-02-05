@@ -22,6 +22,12 @@ public abstract class UIPage : MonoBehaviour
         OnShow(team);
     }
 
+    public void Show(Fixture fixture)
+    {
+        this.DisplayUI();
+        OnShow(fixture);
+    }
+
     protected virtual void OnShow() { }
 
     // Overloaded method for showing with a Player parameter
@@ -29,6 +35,9 @@ public abstract class UIPage : MonoBehaviour
 
     // Overloaded method for showing with a Club parameter
     protected virtual void OnShow(Team team) { }
+
+    // Overloaded method for showing with a Fixture parameter
+    protected virtual void OnShow(Fixture fixture) { }
 
     private void DisplayUI()
     {

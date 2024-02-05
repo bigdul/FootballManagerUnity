@@ -46,10 +46,6 @@ public class FixtureUI : MonoBehaviour
 
     public void OnSimulateClick()
     {
-        Fixture.SimulateFixture();
-
-        LeagueManager.Instance.UpdateStandings(Fixture);
-
-        UIManager.Instance.ShowHomePage();
+        UIManager.Instance.ShowMatchSimPage(Fixture);
     }
 }
