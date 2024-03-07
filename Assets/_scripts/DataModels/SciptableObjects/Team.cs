@@ -23,7 +23,8 @@ public class Team : ScriptableObject
     public float AvgTechnique => Mathf.Round((float)Players.Average(x => x.Technique));
     public float AvgPhysical => Mathf.Round((float)Players.Average(x => x.Physical));
 
-
+    [HideInInspector]
+    public int CurrentScore;
 
     public List<Player> Players = new List<Player>();
 

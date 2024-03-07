@@ -35,10 +35,10 @@ public class MatchSimPageUI : UIPage
 
         _fixture = fixture;
 
-        StartCoroutine(SimMatch());
+        SimMatch();
     }
 
-    private void UpdateMatchUI()
+    public void UpdateMatchUI()
     {
         //Club names
         _homeClubName.text = _fixture.homeTeam.teamName;
@@ -52,30 +52,22 @@ public class MatchSimPageUI : UIPage
         _timerText.text = _fixture.hasPlayed ? "Full time" : _currentTime.ToString();
     }
 
-    private IEnumerator SimMatch()
+    public void UpdateTimer(int time) 
     {
-        for(int i = 0; i < 91; i++)
-        {
-            _currentTime = i;
+        _currentTime = time;  
+        _timerText.text = time.ToString(); 
+    }
 
-            //Show a placeholder event
-            PrintEvent($"Match is at minute {i}");
-
-            //Update the UI
-            UpdateMatchUI();
-
-            yield return new WaitForSeconds(0.2f);
-        }
-
-        //Just for now, the full match is simulated after the end of 90, we'll update this
-        _fixture.SimulateFixture();
+    private void SimMatch()
+    {
+        StartCoroutine(_fixture.AdvancedSimulateFixture());
 
         UpdateMatchUI();
     }
 
-    private void PrintEvent(string text)
+    public void PrintEvent(int minute, string text)
     {
-        Instantiate(_matchEventPrefab, _matchEventContainer).GetComponent<MatchEventUI>().SetText(text);
+        Instantiate(_matchEventPrefab, _matchEventContainer).GetComponent<MatchEventUI>().SetText($"{minute}: {text}");
     }
 
     private void ClearEvents()
